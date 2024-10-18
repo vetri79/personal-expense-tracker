@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Student</title>
+</head>
+<body>
+    <h1>{{ student.name }} (Roll Number: {{ student.roll_number }})</h1>
+    <h2>Grades</h2>
+    <ul>
+        {% for subject, grade in student.grades.items() %}
+            <li>{{ subject }}: {{ grade }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/add_grades/{{ student.roll_number }}">Add Grades</a>
+    <a href="/average_grade/{{ student.roll_number }}">Calculate Average</a>
+</body>
+</html>
